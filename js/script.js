@@ -1,4 +1,4 @@
-var myDiv = 
+var myDiv = document.getElementById("my-div");
 
 fetch('https://www.loc.gov/maps/?q=brooklyn&fo=json')
   .then(function (response) {
@@ -12,7 +12,8 @@ fetch('https://www.loc.gov/maps/?q=brooklyn&fo=json')
         $(title).text(data.results[i].title);
         let map = document.createElement('img');
         $(map).attr('src',data.results[i].image_url[0]);
-        myDiv.document.appendChild(title);
+        document.getElementById('my-div').appendChild(title);
+        document.getElementById('my-div').appendChild(map);
         
     }
   
